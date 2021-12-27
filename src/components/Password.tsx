@@ -30,10 +30,10 @@ const Password: React.FC<PasswordProps> = ({item, ...rest}) => {
     })
   }
 
-  React.useEffect(() => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16)
-    setColorIcon('#' + String(randomColor))
-  }, [])
+  // React.useEffect(() => {
+  //   const randomColor = Math.floor(Math.random() * 16777215).toString(16)
+  //   setColorIcon('#' + String(randomColor))
+  // }, [])
 
   return (
     <TouchableOpacity
@@ -43,13 +43,13 @@ const Password: React.FC<PasswordProps> = ({item, ...rest}) => {
       onPress={() => { copyToClipboard(item.pass) }}
       onLongPress={() => { notifyMessage('Editar senha') }}
     >
-      <View style={[styles.icon, { backgroundColor: colorIcon }]}>
-        <Text style={styles.iconText}>N</Text>
+      <View style={styles.icon}>
+        <Text style={styles.iconText}>{String(item.domain).substr(0,1)}</Text>
       </View>
 
       <View style={styles.contentData}>
-        <Text numberOfLines={1} style={styles.domain}>Nubank</Text>
-        <Text numberOfLines={2} style={styles.account}>leo.azannielttt@gmail.com</Text>
+        <Text numberOfLines={1} style={styles.domain}>{item.domain}</Text>
+        <Text numberOfLines={2} style={styles.account}>{item.account}</Text>
       </View>
 
       <View style={styles.copyButton}>
@@ -78,7 +78,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
-    borderRadius: 10
+    borderRadius: 10,
+    backgroundColor: '#61a05b'
   },
 
   iconText: {
@@ -100,6 +101,7 @@ const styles = StyleSheet.create({
   account: {
     fontSize: 12,
     marginTop: 'auto',
+    marginBottom: 4,
     fontWeight: '300'
   },
 

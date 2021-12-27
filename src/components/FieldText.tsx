@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { LegacyRef } from 'react'
 import { StyleSheet, TextInput, Text, TextInputProps, View } from 'react-native'
 
 import colors from '../theme/colors'
 
 interface FieldTextProps extends TextInputProps {
-  label?: string
+  label?: string;
 }
 
-const FieldText: React.FC<FieldTextProps> = ({ label, ...rest }) => {
+const FieldText = React.forwardRef<TextInput, FieldTextProps>((props, ref) => {
+  const {label, ...rest} = props;
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.field} {...rest} />
+      <TextInput ref={ref} style={styles.field} {...rest} />
     </View>
   )
-}
+})
 
 const styles = StyleSheet.create({
   container: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  View, Text,
+  View, Text, TextInput,
 } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -10,10 +10,28 @@ import MediumButton from '../../components/MediumButton'
 import styles from './styles'
 
 const CreatePass: React.FC = () => {
+  const domainRef = React.createRef<TextInput>()
+  const accountRef = React.createRef<TextInput>()
+  const passRef = React.createRef<TextInput>()
+
+  const [domain, setDomain] = React.useState('')
+  const [account, setAccount] = React.useState('')
+  const [pass, setPass] = React.useState('')
+
+  const [validation, setValidation] = React.useState(false)
+
+  const submitCreatePass = () => {
+    console.log('submit')
+
+    if(!domain || !account || !pass) {
+      setValidation(true)
+    }
+  }
+
   return (
     <KeyboardAwareScrollView
       style={styles.container}
-      enableOnAndroid={true}
+      enableOnAndroid={false}
       keyboardShouldPersistTaps='always'
       showsVerticalScrollIndicator={false}
     >
@@ -24,15 +42,48 @@ const CreatePass: React.FC = () => {
         </View>
 
         <View style={styles.contentFields}>
-          <FieldText label='Site/Serviço' placeholder='G-mail' />
+          <FieldText
+            ref={domainRef}
+            label='Site/Serviço'
+            placeholder='G-mail'
+            onChangeText={text => setDomain(text)}
+            onSubmitEditing={() => {
+              accountRef.current?.focus()
+            }}
+          />
 
-          <FieldText label='Conta' placeholder='joao@gmail.com' />
+          <FieldText
+            ref={accountRef}
+            label='Conta'
+            placeholder='joao@gmail.com'
+            keyboardType='email-address'
+            autoCapitalize='none'
+            autoCompleteType='off'
+            onChangeText={text => setAccount(text)}
+            onSubmitEditing={() => {
+              passRef.current?.focus()
+            }}
+          />
 
-          <FieldText label='Senha' placeholder='****' secureTextEntry />
+          <FieldText
+            ref={passRef}
+            label='Senha'
+            placeholder='****'
+            autoCompleteType='off'
+            secureTextEntry
+            onChangeText={text => setPass(text)}
+            onSubmitEditing={submitCreatePass}
+          />
+        </View>
+
+        <View style={{display: validation ? 'flex' : 'none'}}>
+          <Text style={{ fontSize: 12, color: 'red', marginTop: 10}}>
+            *Preencha todos os campos para salvarmos sua senha
+          </Text>
         </View>
 
         <View style={styles.contentButton}>
-          <MediumButton title='Guardar' />
+          <MediumButton onPress={submitCreatePass} title='Guardar' />
         </View>
       </View>
     </KeyboardAwareScrollView>

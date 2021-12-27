@@ -38,11 +38,11 @@ const Home: React.FC = () => {
 
         <View style={styles.contentButtonsAction}>
           <BigButton title='Guardar nova senha' icon={IconSave} onPress={navigateToCreatePass} />
-          <BigButton title='Exportar minhas senhas' icon={IconExport} />
+          <BigButton title='Exportar ou Importar' icon={IconExport} />
         </View>
 
         <View style={styles.contentPasswords}>
-          <Password item={{domain: 'Gmail', account: 'testemeiosangue', pass: '123'}} />
+          <Password item={{domain: 'Gmail', account: 'testemeiosangue@gmail.com', pass: '123'}} />
         </View>
 
       </ScrollView>
