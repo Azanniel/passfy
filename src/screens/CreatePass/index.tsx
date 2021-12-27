@@ -21,11 +21,12 @@ const CreatePass: React.FC = () => {
   const [validation, setValidation] = React.useState(false)
 
   const submitCreatePass = () => {
-    console.log('submit')
-
     if(!domain || !account || !pass) {
       setValidation(true)
+      return false
     }
+
+    console.log('Submit')
   }
 
   return (
