@@ -8,5 +8,6 @@ export default {
   textLight: '#666666',
   gray: '#A9A9A9',
   green: '#2C9C78',
-  greenLight: '#3DC69A'
+  greenLight: '#3DC69A',
+  red: '#BD2130'
 }

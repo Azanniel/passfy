@@ -30,10 +30,14 @@ const Home: React.FC = () => {
     navigation.navigate('CreatePass')
   }
 
+  const navigateToEditPass = (item: IPassword) => {
+    navigation.navigate('EditPass', item)
+  }
+
   const renderPasswords = () => {
     if(passwords.length > 0){
       return passwords.map((item) => (
-        <Password key={item.id} item={item} />
+        <Password key={item.id} item={item} goToEdit={() => {navigateToEditPass(item)}} />
       ))
     }else{
       return <EmptyPasswords />

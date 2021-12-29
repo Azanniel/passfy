@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import Home from '../screens/Home'
 import CreatePass from '../screens/CreatePass'
+import EditPass from '../screens/EditPass'
 
 import colors from '../theme/colors'
 import StackParamList from './StackParamList'
@@ -24,6 +25,7 @@ const StackRoutes = () => {
 
         <Screen name='Home' component={Home} />
         <Screen name='CreatePass' component={CreatePass} />
+        <Screen name='EditPass' component={EditPass} />
 
       </Navigator>
     </NavigationContainer>

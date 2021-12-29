@@ -11,10 +11,11 @@ import IPassword from '../types/IPassword'
 import colors from '../theme/colors'
 
 interface PasswordProps extends TouchableOpacityProps {
-  item: IPassword
+  item: IPassword,
+  goToEdit(): void
 }
 
-const Password: React.FC<PasswordProps> = ({item, ...rest}) => {
+const Password: React.FC<PasswordProps> = ({item, goToEdit,...rest}) => {
   const [colorIcon, setColorIcon] = React.useState<string>()
 
   const copyToClipboard = (text: string) => {
@@ -30,18 +31,18 @@ const Password: React.FC<PasswordProps> = ({item, ...rest}) => {
     })
   }
 
-  // React.useEffect(() => {
-  //   const randomColor = Math.floor(Math.random() * 16777215).toString(16)
-  //   setColorIcon('#' + String(randomColor))
-  // }, [])
+  React.useEffect(() => {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16)
+    setColorIcon('#' + String(randomColor))
+  }, [])
 
   return (
     <TouchableOpacity
       {...rest}
       style={styles.container}
       activeOpacity={0.8}
-      onPress={() => { copyToClipboard(item.pass) }}
-      onLongPress={() => { notifyMessage('Editar senha') }}
+      onPress={goToEdit}
+      onLongPress={() => { copyToClipboard(item.pass) }}
     >
       <View style={styles.icon}>
         <Text style={styles.iconText}>{String(item.domain).substr(0,1)}</Text>
