@@ -3,13 +3,23 @@ import {
   View, Text, TextInput,
 } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import uuid from 'react-native-uuid'
 
 import FieldText from '../../components/FieldText'
 import MediumButton from '../../components/MediumButton'
 
+import { savePassword } from '../../storage/passwordStorage'
+import StackParamList from '../../routes/StackParamList'
+
 import styles from './styles'
 
+type NavigationProps = StackNavigationProp<StackParamList, 'CreatePass'>;
+
 const CreatePass: React.FC = () => {
+  const navigation = useNavigation<NavigationProps>()
+
   const domainRef = React.createRef<TextInput>()
   const accountRef = React.createRef<TextInput>()
   const passRef = React.createRef<TextInput>()
@@ -18,15 +28,31 @@ const CreatePass: React.FC = () => {
   const [account, setAccount] = React.useState('')
   const [pass, setPass] = React.useState('')
 
+  const [loading, setLoading] = React.useState(false)
+
   const [validation, setValidation] = React.useState(false)
 
-  const submitCreatePass = () => {
+  const submitCreatePass = async () => {
+    setValidation(false)
+
     if(!domain || !account || !pass) {
       setValidation(true)
       return false
     }
 
-    console.log('Submit')
+    setLoading(true)
+
+    await savePassword({
+      id: uuid.v4().toString(),
+      account,
+      domain,
+      pass
+    })
+
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Home'}]
+    })
   }
 
   return (
@@ -84,7 +110,7 @@ const CreatePass: React.FC = () => {
         </View>
 
         <View style={styles.contentButton}>
-          <MediumButton onPress={submitCreatePass} title='Guardar' />
+          <MediumButton disabled={loading} onPress={submitCreatePass} title='Guardar' />
         </View>
       </View>
     </KeyboardAwareScrollView>

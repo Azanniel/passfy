@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '400',
     paddingLeft: 10,
+    paddingRight: 5,
     color: colors.textLight
   }
 })
