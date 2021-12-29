@@ -44,7 +44,7 @@ const Password: React.FC<PasswordProps> = ({item, goToEdit,...rest}) => {
       onPress={goToEdit}
       onLongPress={() => { copyToClipboard(item.pass) }}
     >
-      <View style={styles.icon}>
+      <View style={[styles.icon, {backgroundColor: colorIcon}]}>
         <Text style={styles.iconText}>{String(item.domain).substr(0,1)}</Text>
       </View>
 
