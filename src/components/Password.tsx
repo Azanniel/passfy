@@ -9,6 +9,7 @@ import * as Clipboard from 'expo-clipboard'
 
 import IPassword from '../types/IPassword'
 import colors from '../theme/colors'
+import colorsUtils from '../theme/colorsUtils'
 
 interface PasswordProps extends TouchableOpacityProps {
   item: IPassword,
@@ -32,8 +33,8 @@ const Password: React.FC<PasswordProps> = ({item, goToEdit,...rest}) => {
   }
 
   React.useEffect(() => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16)
-    setColorIcon('#' + String(randomColor))
+    const randomColor = colorsUtils[Math.floor(Math.random() * colorsUtils.length)]
+    setColorIcon(String(randomColor))
   }, [])
 
   return (

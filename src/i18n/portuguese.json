@@ -14,5 +14,11 @@
   "fieldAccount": "Conta",
   "fieldPass": "Senha",
   "validationMessage": "*Preencha todos os campos para salvarmos sua senha",
-  "buttonSave": "Guardar"
+  "buttonSave": "Guardar",
+  "bWelcome": "Boas vindas",
+  "bWelcomeDescription": "PassFy lhe ajuda a guardar suas senhas e tudo vai ficar no seu celular",
+  "bHoldCopy": "Segure e Copie...",
+  "bHoldCopyDescription": "Segure e copie sua senha para colar onde quiser e quando quiser",
+  "bSecure": "Simples e Seguro",
+  "bSecureDescription": "Não tem rodeio, guarde suas senhas para lembrar quando quiser"
 }

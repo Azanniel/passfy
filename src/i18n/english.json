@@ -14,5 +14,11 @@
   "fieldAccount": "Account",
   "fieldPass": "Password",
   "validationMessage": "*Fill in all fields to save your password",
-  "buttonSave": "Save"
+  "buttonSave": "Save",
+  "bWelcome": "Welcome to PassFy",
+  "bWelcomeDescription": "We help you save your passwords and everything stays right on your cell phone",
+  "bHoldCopy": "Hold and Copy...",
+  "bHoldCopyDescription": "Hold and copy your password to paste wherever and whenever you want",
+  "bSecure": "Simple & Secure",
+  "bSecureDescription": "No fuss, save your passwords to remember whenever you want"
 }
