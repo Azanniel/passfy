@@ -33,8 +33,6 @@ export async function updatePassword(item: IPassword): Promise<void> {
     }
   })
 
-  console.log(newPasswords)
-
   await AsyncStorage.setItem(
     'passfy@passwords',
     JSON.stringify(newPasswords)
