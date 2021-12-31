@@ -1,6 +1,8 @@
 {
   "CFBundleDisplayName": "PassFy",
   "NSContactsUsageDescription": "PassFy - Gerenciador de senhas",
+  "NSFaceIDUsageDescription": "O aplicativo precisa de acesso ao seu FaceID para se autenticar",
+  "authMessage": "Desbloqueie seu app",
   "welcome": "Olá,",
   "newPass": "Guardar nova senha",
   "exportPass": "Exportar ou Importar",

@@ -19,18 +19,20 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "CFBundleAllowMixedLocalizations": true
+        "CFBundleAllowMixedLocalizations": true,
+        "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication"
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC"]
     },
     "locales": {
-      "pt": "./src/i18n/pt-BR.json",
-      "en": "./src/i18n/en-US.json"
+      "pt": "./src/i18n/portuguese.json",
+      "en": "./src/i18n/english.json"
     }
   }
 }

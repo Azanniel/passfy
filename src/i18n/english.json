@@ -1,6 +1,8 @@
 {
   "CFBundleDisplayName": "PassFy",
   "NSContactsUsageDescription": "PassFy - Password manager",
+  "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication",
+  "authMessage": "Unlock your app",
   "welcome": "Hello,",
   "newPass": "Save new password",
   "exportPass": "Export or Import",
