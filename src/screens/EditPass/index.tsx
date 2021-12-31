@@ -8,13 +8,14 @@ import { StackNavigationProp } from '@react-navigation/stack'
 
 import FieldText from '../../components/FieldText'
 import MediumButton from '../../components/MediumButton'
+import DeleteButton from '../../components/DeleteButton'
 
 import StackParamList from '../../routes/StackParamList'
 import IPassword from '../../types/IPassword'
+import { deletePassword, updatePassword } from '../../storage/passwordStorage'
 
 import styles from './styles'
-import DeleteButton from '../../components/DeleteButton'
-import { deletePassword, updatePassword } from '../../storage/passwordStorage'
+import i18n from '../../i18n'
 
 type NavigationProps = StackNavigationProp<StackParamList, 'EditPass'>;
 
@@ -91,15 +92,15 @@ const EditPass: React.FC = () => {
     >
       <View style={{ paddingHorizontal: 20 }}>
         <View style={styles.header}>
-          <Text style={styles.title}>Atualize a senha</Text>
-          <Text style={styles.subtitle}>Não se preocupe, sua senha ficará somente no seu smartphone.</Text>
+          <Text style={styles.title}>{i18n.t('titleUpdatePass')}</Text>
+          <Text style={styles.subtitle}>{i18n.t('notificationAboutSave')}</Text>
         </View>
 
         <View style={styles.contentFields}>
           <FieldText
             ref={domainRef}
-            label='Site/Serviço'
-            placeholder='G-mail'
+            label={i18n.t('fieldDomain')}
+            placeholder='E-mail'
             value={domain}
             onChangeText={text => setDomain(text)}
             onSubmitEditing={() => {
@@ -109,7 +110,7 @@ const EditPass: React.FC = () => {
 
           <FieldText
             ref={accountRef}
-            label='Conta'
+            label={i18n.t('fieldAccount')}
             placeholder='joao@gmail.com'
             keyboardType='email-address'
             autoCapitalize='none'
@@ -123,7 +124,7 @@ const EditPass: React.FC = () => {
 
           <FieldText
             ref={passRef}
-            label='Senha'
+            label={i18n.t('fieldPass')}
             placeholder='****'
             autoCompleteType='off'
             secureTextEntry
@@ -135,13 +136,13 @@ const EditPass: React.FC = () => {
 
         <View style={{display: validation ? 'flex' : 'none'}}>
           <Text style={{ fontSize: 12, color: 'red', marginTop: 10}}>
-            *Preencha todos os campos para salvarmos sua senha
+            {i18n.t('validationMessage')}
           </Text>
         </View>
 
         <View style={styles.contentButton}>
           <DeleteButton disabled={loading} onPress={deletePass} />
-          <MediumButton disabled={loading} onPress={submitEditPass} title='Guardar' />
+          <MediumButton disabled={loading} onPress={submitEditPass} title={i18n.t('buttonSave')} />
         </View>
       </View>
     </KeyboardAwareScrollView>

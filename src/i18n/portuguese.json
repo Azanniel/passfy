@@ -1,0 +1,16 @@
+{
+  "CFBundleDisplayName": "PassFy",
+  "NSContactsUsageDescription": "PassFy - Gerenciador de senhas",
+  "welcome": "Olá,",
+  "newPass": "Guardar nova senha",
+  "exportPass": "Exportar ou Importar",
+  "emptyListPass": "Você não tem \n nenhuma senha para lembrar",
+  "titleNewPass": "Nova senha",
+  "titleUpdatePass": "Atualizar senha",
+  "notificationAboutSave": "Não se preocupe, sua senha ficará somente no seu smartphone",
+  "fieldDomain": "Site ou Serviço",
+  "fieldAccount": "Conta",
+  "fieldPass": "Senha",
+  "validationMessage": "*Preencha todos os campos para salvarmos sua senha",
+  "buttonSave": "Guardar"
+}

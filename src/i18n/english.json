@@ -1,0 +1,16 @@
+{
+  "CFBundleDisplayName": "PassFy",
+  "NSContactsUsageDescription": "PassFy - Password manager",
+  "welcome": "Hello,",
+  "newPass": "Save new password",
+  "exportPass": "Export or Import",
+  "emptyListPass": "You don't have \n any password to remember",
+  "titleNewPass": "New Password",
+  "titleUpdatePass": "Change password",
+  "notificationAboutSave": "Don't worry, your password will only be on your smartphone",
+  "fieldDomain": "Website or Service",
+  "fieldAccount": "Account",
+  "fieldPass": "Password",
+  "validationMessage": "*Fill in all fields to save your password",
+  "buttonSave": "Save"
+}

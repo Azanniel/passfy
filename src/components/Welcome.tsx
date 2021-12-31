@@ -2,13 +2,14 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 
 import Logo from '../assets/logo.png'
+import i18n from '../i18n'
 import colors from '../theme/colors'
 
 const Welcome: React.FC = () => {
   return (
     <View style={styles.content}>
       <Image style={styles.image} source={Logo} />
-      <Text style={styles.text}>Olá,</Text>
+      <Text style={styles.text}>{i18n.t('welcome')}</Text>
     </View>
   )
 }

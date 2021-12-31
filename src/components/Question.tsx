@@ -7,9 +7,9 @@ import colors from '../theme/colors'
 const Question: React.FC = () => {
   return (
     <TouchableOpacity activeOpacity={0.7}>
-      <AntDesign 
-        name="questioncircle" 
-        size={28} 
+      <AntDesign
+        name="questioncircle"
+        size={28}
         color={colors.textLight}
       />
     </TouchableOpacity>

@@ -14,6 +14,7 @@ import { savePassword } from '../../storage/passwordStorage'
 import StackParamList from '../../routes/StackParamList'
 
 import styles from './styles'
+import i18n from '../../i18n'
 
 type NavigationProps = StackNavigationProp<StackParamList, 'CreatePass'>;
 
@@ -64,15 +65,15 @@ const CreatePass: React.FC = () => {
     >
       <View style={{ paddingHorizontal: 20 }}>
         <View style={styles.header}>
-          <Text style={styles.title}>Nova senha</Text>
-          <Text style={styles.subtitle}>Não se preocupe, sua senha ficará somente no seu smartphone.</Text>
+          <Text style={styles.title}>{i18n.t('titleNewPass')}</Text>
+          <Text style={styles.subtitle}>{i18n.t('notificationAboutSave')}</Text>
         </View>
 
         <View style={styles.contentFields}>
           <FieldText
             ref={domainRef}
-            label='Site/Serviço'
-            placeholder='G-mail'
+            label={i18n.t('fieldDomain')}
+            placeholder='E-mail'
             onChangeText={text => setDomain(text)}
             onSubmitEditing={() => {
               accountRef.current?.focus()
@@ -81,7 +82,7 @@ const CreatePass: React.FC = () => {
 
           <FieldText
             ref={accountRef}
-            label='Conta'
+            label={i18n.t('fieldAccount')}
             placeholder='joao@gmail.com'
             keyboardType='email-address'
             autoCapitalize='none'
@@ -94,7 +95,7 @@ const CreatePass: React.FC = () => {
 
           <FieldText
             ref={passRef}
-            label='Senha'
+            label={i18n.t('fieldPass')}
             placeholder='****'
             autoCompleteType='off'
             secureTextEntry
@@ -105,12 +106,12 @@ const CreatePass: React.FC = () => {
 
         <View style={{display: validation ? 'flex' : 'none'}}>
           <Text style={{ fontSize: 12, color: 'red', marginTop: 10}}>
-            *Preencha todos os campos para salvarmos sua senha
+            {i18n.t('validationMessage')}
           </Text>
         </View>
 
         <View style={styles.contentButton}>
-          <MediumButton disabled={loading} onPress={submitCreatePass} title='Guardar' />
+          <MediumButton disabled={loading} onPress={submitCreatePass} title={i18n.t('buttonSave')} />
         </View>
       </View>
     </KeyboardAwareScrollView>

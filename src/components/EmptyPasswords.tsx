@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, View, Dimensions } from 'react-native'
 
 import colors from '../theme/colors'
+import i18n from '../i18n'
 
 const {height, width} = Dimensions.get('window')
 
@@ -14,7 +15,7 @@ const EmptyPasswords: React.FC = () => {
         defaultSource={require('../assets/empty.png')}
         resizeMode='cover'
       />
-      <Text style={styles.text}>Você não tem nenhuma senha {'\n'} para lembrar</Text>
+      <Text style={styles.text}>{i18n.t('emptyListPass')}</Text>
     </View>
   )
 }

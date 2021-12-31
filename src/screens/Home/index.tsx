@@ -17,6 +17,7 @@ import IPassword from '../../types/IPassword'
 
 import styles from './styles'
 import colors from '../../theme/colors'
+import i18n from '../../i18n'
 
 type NavigationProps = StackNavigationProp<StackParamList, 'Home'>;
 
@@ -69,8 +70,8 @@ const Home: React.FC = () => {
         </View>
 
         <View style={styles.contentButtonsAction}>
-          <BigButton title='Guardar nova senha' icon={IconSave} onPress={navigateToCreatePass} />
-          <BigButton title='Exportar ou Importar' icon={IconExport} />
+          <BigButton title={i18n.t('newPass')} icon={IconSave} onPress={navigateToCreatePass} />
+          <BigButton title={i18n.t('exportPass')} icon={IconExport} />
         </View>
 
         <View style={styles.contentPasswords}>
