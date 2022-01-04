@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Passfy",
-    "slug": "Passfy",
+    "slug": "passfy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,6 +18,8 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.vlmsistemas.passfy",
+      "buildNumber": "1.0.0",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
         "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication"
@@ -34,7 +36,9 @@
       "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC", "INTERNET"],
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-4300441947989580~5479778619"
-      }
+      },
+      "package": "com.vlmsistemas.passfy",
+      "versionCode": 1
     },
     "locales": {
       "pt": "./src/i18n/portuguese.json",

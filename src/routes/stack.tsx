@@ -6,6 +6,7 @@ import Home from '../screens/Home'
 import CreatePass from '../screens/CreatePass'
 import EditPass from '../screens/EditPass'
 import OnBoarding from '../screens/OnBoarding'
+import Information from '../screens/Information'
 
 import colors from '../theme/colors'
 import StackParamList from './StackParamList'
@@ -35,6 +36,7 @@ const StackRoutes: React.FC<StackRoutesProps> = ({isFirstAccess}) => {
         <Screen name='Home' component={Home} />
         <Screen name='CreatePass' component={CreatePass} />
         <Screen name='EditPass' component={EditPass} />
+        <Screen name='Information' component={Information} />
 
       </Navigator>
     </NavigationContainer>

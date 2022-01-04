@@ -1,14 +1,14 @@
 import React from 'react'
-import {TouchableOpacity } from 'react-native'
+import {TouchableOpacity, TouchableOpacityProps } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 
 import colors from '../theme/colors'
 
-const Question: React.FC = () => {
+const Question: React.FC<TouchableOpacityProps> = ({...rest}) => {
   return (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity {...rest} activeOpacity={0.7}>
       <AntDesign
-        name="questioncircle"
+        name="exclamationcircle"
         size={28}
         color={colors.textLight}
       />

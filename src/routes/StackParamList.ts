@@ -4,7 +4,8 @@ type StackParamList = {
   Home: undefined,
   CreatePass: undefined,
   EditPass: IPassword,
-  OnBoarding: undefined
+  OnBoarding: undefined,
+  Information: undefined,
 }
 
 export default StackParamList

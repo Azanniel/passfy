@@ -38,6 +38,10 @@ const Home: React.FC = () => {
     navigation.navigate('EditPass', item)
   }
 
+  const navigateToInformation = () => {
+    navigation.navigate('Information')
+  }
+
   const shareApplicationWithFriends = async () => {
     try {
       await Share.share({
@@ -95,7 +99,7 @@ const Home: React.FC = () => {
 
         <View style={styles.header}>
           <Welcome />
-          <Question />
+          <Question onPress={navigateToInformation} />
         </View>
 
         <View style={styles.contentButtonsAction}>
