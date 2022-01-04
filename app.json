@@ -21,6 +21,9 @@
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
         "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication"
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-4300441947989580~5479778619"
       }
     },
     "android": {
@@ -28,7 +31,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#F0F0F0"
       },
-      "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC"]
+      "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC", "INTERNET"],
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-4300441947989580~5479778619"
+      }
     },
     "locales": {
       "pt": "./src/i18n/portuguese.json",

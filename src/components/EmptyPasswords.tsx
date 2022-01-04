@@ -13,7 +13,7 @@ const EmptyPasswords: React.FC = () => {
         style={styles.image}
         source={require('../assets/empty.png')}
         defaultSource={require('../assets/empty.png')}
-        resizeMode='cover'
+        resizeMode='contain'
       />
       <Text style={styles.text}>{i18n.t('emptyListPass')}</Text>
     </View>

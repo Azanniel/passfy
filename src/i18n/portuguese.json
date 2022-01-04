@@ -5,7 +5,7 @@
   "authMessage": "Desbloqueie seu app",
   "welcome": "Olá,",
   "newPass": "Guardar nova senha",
-  "exportPass": "Exportar ou Importar",
+  "referFriend": "Indicar para um amigo",
   "emptyListPass": "Você não tem \n nenhuma senha para lembrar",
   "titleNewPass": "Nova senha",
   "titleUpdatePass": "Atualizar senha",
@@ -20,5 +20,7 @@
   "bHoldCopy": "Segure e Copie...",
   "bHoldCopyDescription": "Segure e copie sua senha para colar onde quiser e quando quiser",
   "bSecure": "Simples e Seguro",
-  "bSecureDescription": "Não tem rodeio, guarde suas senhas para lembrar quando quiser"
+  "bSecureDescription": "Não tem rodeio, guarde suas senhas para lembrar quando quiser",
+  "shareTitle": "PassFy - Um lugar para guardar suas senhas",
+  "shareDescription": "Olá, estou indicando meu app de guardar senhas de forma gratuita. Acesse e guarde as senhas que você precisa lembrar com 100% de segurança: https://play.google.com/store/apps/details?id=com.safeincloud.free \n"
 }

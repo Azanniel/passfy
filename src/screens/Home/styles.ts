@@ -25,6 +25,11 @@ export default StyleSheet.create({
   },
 
   contentPasswords: {
-    marginVertical: 40
+    marginTop: 20,
+    marginBottom: 40
+  },
+
+  adMob: {
+    marginTop: 10
   }
 })

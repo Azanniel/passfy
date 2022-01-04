@@ -14,12 +14,20 @@ export default function App() {
   const [firstAccess, setFirstAccess] = React.useState(true)
 
   async function authenticate() {
+    const hasSupportToAuthenticate = await LocalAuthentication.getEnrolledLevelAsync()
+
+    if(hasSupportToAuthenticate === LocalAuthentication.SecurityLevel.NONE){
+      setAppReady(true)
+      return
+    }
+
     const result = await LocalAuthentication.authenticateAsync({
       promptMessage: i18n.t('authMessage')
     })
 
     if(result.success){
       setAppReady(true)
+      return
     }
   }
 

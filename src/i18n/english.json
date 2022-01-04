@@ -5,7 +5,7 @@
   "authMessage": "Unlock your app",
   "welcome": "Hello,",
   "newPass": "Save new password",
-  "exportPass": "Export or Import",
+  "referFriend": "Refer to a friend",
   "emptyListPass": "You don't have \n any password to remember",
   "titleNewPass": "New Password",
   "titleUpdatePass": "Change password",
@@ -20,5 +20,7 @@
   "bHoldCopy": "Hold and Copy...",
   "bHoldCopyDescription": "Hold and copy your password to paste wherever and whenever you want",
   "bSecure": "Simple & Secure",
-  "bSecureDescription": "No fuss, save your passwords to remember whenever you want"
+  "bSecureDescription": "No fuss, save your passwords to remember whenever you want",
+  "shareTitle": "PassFy - A place to store your passwords",
+  "shareDescription": "Hi, I'm recommending my password saving app for free. Access and save the passwords you need to remember with 100% security: https://play.google.com/store/apps/details?id=com.safeincloud.free \n"
 }
