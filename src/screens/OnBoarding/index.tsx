@@ -42,19 +42,19 @@ const OnBoarding = () => {
           title: i18n.t('bWelcome'),
           subtitle: i18n.t('bWelcomeDescription'),
           backgroundColor: colors.background,
-          image: <Image style={styles.image} resizeMode='cover' source={require('../../assets/ob01.png')} />
+          image: <Image style={styles.image} resizeMode='contain' source={require('../../assets/ob01.png')} />
         },
         {
           title: i18n.t('bHoldCopy'),
           subtitle: i18n.t('bHoldCopyDescription'),
           backgroundColor: colors.background,
-          image: <Image style={styles.image} resizeMode='cover' source={require('../../assets/ob02.png')} />
+          image: <Image style={styles.image} resizeMode='contain' source={require('../../assets/ob02.png')} />
         },
         {
           title: i18n.t('bSecure'),
           subtitle: i18n.t('bSecureDescription'),
           backgroundColor: colors.background,
-          image: <Image style={styles.image} resizeMode='cover' source={require('../../assets/ob03.png')} />
+          image: <Image style={styles.image} resizeMode='contain' source={require('../../assets/ob03.png')} />
         },
       ]}
     />

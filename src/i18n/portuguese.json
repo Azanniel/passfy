@@ -1,6 +1,7 @@
 {
   "CFBundleDisplayName": "PassFy",
   "NSContactsUsageDescription": "PassFy - Gerenciador de senhas",
+  "NSUserTrackingUsageDescription": "O aplicativo precisa de acesso a internet para usar algumas funcionalidades",
   "NSFaceIDUsageDescription": "O aplicativo precisa de acesso ao seu FaceID para se autenticar",
   "authMessage": "Desbloqueie seu app",
   "welcome": "Olá,",
@@ -24,5 +25,5 @@
   "shareTitle": "PassFy - Um lugar para guardar suas senhas",
   "shareDescription": "Olá, estou indicando meu app de guardar senhas de forma gratuita. Acesse e guarde as senhas que você precisa lembrar com 100% de segurança: https://play.google.com/store/apps/details?id=com.safeincloud.free \n",
   "versionDescription": "Versão: 1.0.0",
-  "informationAboutPass": "Declaramos que não guardamos nenhuma conta, e-mail, senha, e qualquer outro tipo de dado pessoal que você, usuário, venha a fornecer nesta aplicação."
+  "informationAboutPass": "Declaramos que não guardamos nenhuma conta, e-mail, senha e qualquer outro tipo de dado pessoal que você, usuário, venha a fornecer nesta aplicação."
 }

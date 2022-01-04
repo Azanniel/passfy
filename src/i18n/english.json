@@ -1,6 +1,7 @@
 {
   "CFBundleDisplayName": "PassFy",
   "NSContactsUsageDescription": "PassFy - Password manager",
+  "NSUserTrackingUsageDescription": "This app needs access internet for use some features",
   "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication",
   "authMessage": "Unlock your app",
   "welcome": "Hello,",
@@ -24,5 +25,5 @@
   "shareTitle": "PassFy - A place to store your passwords",
   "shareDescription": "Hi, I'm recommending my password saving app for free. Access and save the passwords you need to remember with 100% security: https://play.google.com/store/apps/details?id=com.safeincloud.free \n",
   "versionDescription": "Version: 1.0.0",
-  "informationAboutPass": "We declare that we do not store any account, email, password, and any other type of personal data that you, the user, may provide in this application."
+  "informationAboutPass": "We declare that we do not store any account, email, password and any other type of personal data that you, the user, may provide in this application."
 }

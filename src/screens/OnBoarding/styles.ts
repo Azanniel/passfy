@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get('window')
 
 export default StyleSheet.create({
   image: {
-    width: width * 0.9,
+    width: width * 0.8,
     height: height * 0.4,
   },
 

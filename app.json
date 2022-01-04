@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Passfy",
+    "name": "PassFy",
     "slug": "passfy",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,6 +22,7 @@
       "buildNumber": "1.0.0",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
+        "NSUserTrackingUsageDescription": "This app needs access internet for use some features",
         "NSFaceIDUsageDescription": "This app needs access to your FaceID for authentication"
       },
       "config": {
