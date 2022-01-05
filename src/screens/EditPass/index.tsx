@@ -5,13 +5,15 @@ import {
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
+import { AdMobInterstitial } from 'expo-ads-admob'
 
 import FieldText from '../../components/FieldText'
 import MediumButton from '../../components/MediumButton'
 import DeleteButton from '../../components/DeleteButton'
 
-import StackParamList from '../../routes/StackParamList'
 import IPassword from '../../types/IPassword'
+import StackParamList from '../../routes/StackParamList'
+import adUnitIdInterstitial from '../../adMobIDs/adUnitIdInterstitial'
 import { deletePassword, updatePassword } from '../../storage/passwordStorage'
 
 import styles from './styles'
@@ -33,7 +35,6 @@ const EditPass: React.FC = () => {
   const [pass, setPass] = React.useState('')
 
   const [loading, setLoading] = React.useState(false)
-
   const [validation, setValidation] = React.useState(false)
 
   const resetNavigationToHome = () => {
@@ -43,6 +44,12 @@ const EditPass: React.FC = () => {
         {name: 'Home'}
       ]
     })
+  }
+
+  const showInterstitialPublish = async () => {
+    await AdMobInterstitial.setAdUnitID(adUnitIdInterstitial) // Test ID, Replace with your-admob-unit-id
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true})
+    await AdMobInterstitial.showAdAsync()
   }
 
   const submitEditPass = async () => {
@@ -62,6 +69,7 @@ const EditPass: React.FC = () => {
         pass
       })
 
+      await showInterstitialPublish()
       resetNavigationToHome()
     }
   }
@@ -71,6 +79,7 @@ const EditPass: React.FC = () => {
       setLoading(true)
 
       await deletePassword(password.id)
+      await showInterstitialPublish()
       resetNavigationToHome()
     }
   }

@@ -5,6 +5,7 @@ import {
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
+import { AdMobInterstitial } from 'expo-ads-admob'
 import uuid from 'react-native-uuid'
 
 import FieldText from '../../components/FieldText'
@@ -12,6 +13,7 @@ import MediumButton from '../../components/MediumButton'
 
 import { savePassword } from '../../storage/passwordStorage'
 import StackParamList from '../../routes/StackParamList'
+import adUnitIdInterstitial from '../../adMobIDs/adUnitIdInterstitial'
 
 import styles from './styles'
 import i18n from '../../i18n'
@@ -30,13 +32,18 @@ const CreatePass: React.FC = () => {
   const [pass, setPass] = React.useState('')
 
   const [loading, setLoading] = React.useState(false)
-
   const [validation, setValidation] = React.useState(false)
+
+  const showInterstitialPublish = async () => {
+    await AdMobInterstitial.setAdUnitID(adUnitIdInterstitial) // Test ID, Replace with your-admob-unit-id
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true})
+    await AdMobInterstitial.showAdAsync()
+  }
 
   const submitCreatePass = async () => {
     setValidation(false)
 
-    if(!domain || !account || !pass) {
+    if (!domain || !account || !pass) {
       setValidation(true)
       return false
     }
@@ -50,9 +57,11 @@ const CreatePass: React.FC = () => {
       pass
     })
 
+    await showInterstitialPublish()
+
     navigation.reset({
       index: 0,
-      routes: [{name: 'Home'}]
+      routes: [{ name: 'Home' }]
     })
   }
 
@@ -104,8 +113,8 @@ const CreatePass: React.FC = () => {
           />
         </View>
 
-        <View style={{display: validation ? 'flex' : 'none'}}>
-          <Text style={{ fontSize: 12, color: 'red', marginTop: 10}}>
+        <View style={{ display: validation ? 'flex' : 'none' }}>
+          <Text style={{ fontSize: 12, color: 'red', marginTop: 10 }}>
             {i18n.t('validationMessage')}
           </Text>
         </View>

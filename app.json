@@ -14,7 +14,8 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "**/*",
+      "src/assets/*"
     ],
     "ios": {
       "supportsTablet": true,
@@ -34,7 +35,11 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#F0F0F0"
       },
-      "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC", "INTERNET"],
+      "permissions": [
+        "USE_FINGERPRINT",
+        "USE_BIOMETRIC",
+        "INTERNET"
+      ],
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-4300441947989580~5479778619"
       },
@@ -44,6 +49,14 @@
     "locales": {
       "pt": "./src/i18n/portuguese.json",
       "en": "./src/i18n/english.json"
-    }
+    },
+    "plugins": [
+      [
+        "expo-ads-admob",
+        {
+          "userTrackingPermission": "This identifier will be used to deliver personalized ads to you."
+        }
+      ]
+    ]
   }
 }
