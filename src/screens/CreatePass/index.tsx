@@ -57,12 +57,16 @@ const CreatePass: React.FC = () => {
       pass
     })
 
-    await showInterstitialPublish()
-
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Home' }]
-    })
+    try {
+      await showInterstitialPublish()
+    } catch (error) {
+      console.log(error)
+    } finally {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }]
+      })
+    }
   }
 
   return (

@@ -69,8 +69,13 @@ const EditPass: React.FC = () => {
         pass
       })
 
-      await showInterstitialPublish()
-      resetNavigationToHome()
+      try {
+        await showInterstitialPublish()
+      } catch (error) {
+        console.log(error)
+      } finally {
+        resetNavigationToHome()
+      }
     }
   }
 
@@ -79,8 +84,14 @@ const EditPass: React.FC = () => {
       setLoading(true)
 
       await deletePassword(password.id)
-      await showInterstitialPublish()
-      resetNavigationToHome()
+
+      try {
+        await showInterstitialPublish()
+      } catch (error) {
+        console.log(error)
+      } finally {
+        resetNavigationToHome()
+      }
     }
   }
 
