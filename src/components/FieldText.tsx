@@ -1,4 +1,4 @@
-import React, { LegacyRef } from 'react'
+import React from 'react'
 import { StyleSheet, TextInput, Text, TextInputProps, View } from 'react-native'
 
 import colors from '../theme/colors'

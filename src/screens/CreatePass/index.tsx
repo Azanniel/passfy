@@ -1,14 +1,16 @@
 import React from 'react'
 import {
-  View, Text, TextInput,
+  View, Text, TextInput, TouchableOpacity,
 } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { AdMobInterstitial } from 'expo-ads-admob'
+import { Feather } from '@expo/vector-icons'
 import uuid from 'react-native-uuid'
 
 import FieldText from '../../components/FieldText'
+import FieldGroupText from '../../components/FieldGroupText'
 import MediumButton from '../../components/MediumButton'
 
 import { savePassword } from '../../storage/passwordStorage'
@@ -33,11 +35,23 @@ const CreatePass: React.FC = () => {
 
   const [loading, setLoading] = React.useState(false)
   const [validation, setValidation] = React.useState(false)
+  const [showPass, setShowPass] = React.useState(false)
 
   const showInterstitialPublish = async () => {
     await AdMobInterstitial.setAdUnitID(adUnitIdInterstitial) // Test ID, Replace with your-admob-unit-id
     await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true})
     await AdMobInterstitial.showAdAsync()
+  }
+
+  const renderEyeButton = () => {
+    return (
+      <TouchableOpacity
+        onPressIn={() => setShowPass(true)}
+        onPressOut={() => setShowPass(false)}
+      >
+        <Feather name="eye" size={20} color="gray" />
+      </TouchableOpacity>
+    )
   }
 
   const submitCreatePass = async () => {
@@ -106,14 +120,15 @@ const CreatePass: React.FC = () => {
             }}
           />
 
-          <FieldText
+          <FieldGroupText
             ref={passRef}
             label={i18n.t('fieldPass')}
             placeholder='****'
             autoCompleteType='off'
-            secureTextEntry
+            secureTextEntry={!showPass}
             onChangeText={text => setPass(text)}
             onSubmitEditing={submitCreatePass}
+            elementToGroup={renderEyeButton()}
           />
         </View>
 

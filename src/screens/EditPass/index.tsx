@@ -1,13 +1,15 @@
 import React from 'react'
 import {
-  View, Text, TextInput,
+  View, Text, TextInput, TouchableOpacity,
 } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { AdMobInterstitial } from 'expo-ads-admob'
+import { Feather } from '@expo/vector-icons'
 
 import FieldText from '../../components/FieldText'
+import FieldGroupText from '../../components/FieldGroupText'
 import MediumButton from '../../components/MediumButton'
 import DeleteButton from '../../components/DeleteButton'
 
@@ -36,6 +38,7 @@ const EditPass: React.FC = () => {
 
   const [loading, setLoading] = React.useState(false)
   const [validation, setValidation] = React.useState(false)
+  const [showPass, setShowPass] = React.useState(false)
 
   const resetNavigationToHome = () => {
     navigation.reset({
@@ -77,6 +80,17 @@ const EditPass: React.FC = () => {
         resetNavigationToHome()
       }
     }
+  }
+
+  const renderEyeButton = () => {
+    return (
+      <TouchableOpacity
+        onPressIn={() => setShowPass(true)}
+        onPressOut={() => setShowPass(false)}
+      >
+        <Feather name="eye" size={20} color="gray" />
+      </TouchableOpacity>
+    )
   }
 
   const deletePass = async () => {
@@ -142,15 +156,16 @@ const EditPass: React.FC = () => {
             }}
           />
 
-          <FieldText
+          <FieldGroupText
             ref={passRef}
             label={i18n.t('fieldPass')}
             placeholder='****'
             autoCompleteType='off'
-            secureTextEntry
+            secureTextEntry={!showPass}
             value={pass}
             onChangeText={text => setPass(text)}
             onSubmitEditing={submitEditPass}
+            elementToGroup={renderEyeButton()}
           />
         </View>
 
