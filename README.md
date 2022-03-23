@@ -1,6 +1,6 @@
 <div align="center">
   <div align="center">
-    <img width="180px" src="./src/assets/nameApp.png" alt="Encurtoor" />
+    <img width="180px" src="./src/assets/nameApp.png" alt="PassFy" />
   </div>
 
   <br>
